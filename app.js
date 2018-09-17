@@ -12,21 +12,15 @@ new Vue({
             this.powerMonster = 100;
         },
         attack: function(){
-            var max = 9;
-            var min = 2;
-            var loss = Math.max(Math.floor(Math.random()* max) + 1, min)
-            this.powerYou -= loss;
-
+            this.powerYou -= this.calculateLoss(2,9);//(min, max)
+            
             if (this.powerYou <= 0){
-                alert('Potwór przegrał!');
+                alert('Wygrałeś!');
                 this.gameIsRunning = false;
                 return;
-            }
-            
-            var max = 11;
-            var min = 4;
-            var loss = Math.max(Math.floor(Math.random()* max) + 1, min)
-            this.powerMonster -= loss;
+            }     
+           
+            this.powerMonster -= this.calculateLoss(4,11);           
 
             if (this.powerMonster <= 0){
                 alert('Potwór wygrał!');
@@ -42,7 +36,12 @@ new Vue({
         },
         giveUp: function(){
 
+        }, 
+        calculateLoss: function(min, max){
+            return Math.max(Math.floor(Math.random()* max) + 1, min);
         }
+        //(max, min) - max(zaokręglenie z losowej liczby razy max (co da wynik z przecinkiem, ale dzięki floor zaokrągli. +1 jest po to, by gdy padnie o.6 to zaokrąglenie będzie do 0 a nie może być atak na 0. z plus jeden będzie zawsze wyżej od zera))
+       
     }
 })
 
