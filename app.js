@@ -12,29 +12,34 @@ new Vue({
             this.powerMonster = 100;
         },
         attack: function () {
-            this.powerMonster -= this.calculateLoss(4, 11);
+            this.powerMonster -= this.calculateLoss(3, 10);
             if (this.checkWin()) {
                 return;
             }
-            this.powerYou -= this.calculateLoss(2, 9);//(min, max)
-            this.checkWin();
-
+            this.monsterAttacks();
         },
         specialAttack: function () {
-
-            this.powerMonster -= this.calculateLoss(9, 19);
+            this.powerMonster -= this.calculateLoss(10, 20);
             if (this.checkWin()) {
                 return;
             }
-            this.powerYou -= this.calculateLoss(10, 20);//(min, max)
-            this.checkWin();
-
+            this.monsterAttacks();     
         },
         addLife: function () {
-
+            if (this.powerYou <=90) {
+                this.powerYou +=10;
+            }
+            else {
+                this.powerYou = 100;
+            }            
+            this.monsterAttacks();
         },
         giveUp: function () {
 
+        }, 
+        monsterAttacks: function() {
+            this.powerYou -= this.calculateLoss(5, 12);//(min, max)
+            this.checkWin();
         },
         calculateLoss: function (min, max) {
             return Math.max(Math.floor(Math.random() * max) + 1, min);
