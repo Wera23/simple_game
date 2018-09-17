@@ -36,10 +36,10 @@
 
             <section class="run" v-else>
             <div class="elements_section3">
-                <button class="el element_attack">ATAK</button>
-                <button class="el element_special_attack">SPECJALNY ATAK</button>
-                <button class="el element_heal">UZDRÓW</button>
-                <button class="el element_give_up">PODDAJ SIĘ!</button>
+                <button class="el element_attack" @click="attack" >ATAK</button>
+                <button class="el element_special_attack" @click="specialAttack">SPECJALNY ATAK</button>
+                <button class="el element_addlife" @click="addLife">Dodaj życie</button>
+                <button class="el element_give_up" @click="giveUp">PODDAJ SIĘ!</button>
             </div>
             </section>
 
