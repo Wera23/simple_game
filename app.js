@@ -19,7 +19,7 @@ new Vue({
                 this.gameIsRunning = false;
                 return;
             }     
-           
+                       
             this.powerMonster -= this.calculateLoss(4,11);           
 
             if (this.powerMonster <= 0){
