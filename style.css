@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.game_box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+
+#app_game{
+    height: 50vh;
+    width: 50vw;
+    display: grid;
+    grid-auto-columns: 700px;
+    grid-auto-rows: 200px, 100px, 100px; 
+    justify-content: center;
+    align-items: center;
+    grid-gap: 15px;
+}
+
+
+
+.elements_section1,
+.elements_section2,
+.elements_section3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-block-end: 1px solid red;
+}
+
+.el{    
+    background: rgb(46, 141, 87);     
+    text-decoration: none;
+    border: none;
+    margin-left: 10px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.element_start{
+    background-color: rgb(255, 76, 10);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.el:hover{
+    background: rgb(46, 141, 87, 0.6);   
+}
+
+.element_start:hover{
+    background-color: rgb(255, 76, 10, 0.8); 
+}
+
+.character{
+    margin-left: 25px;  
+}
+
+.passive{
+    width: 180px;
+    height: 30px;
+    background-color: gray;
+    margin-top: 15px;
+    position: relative;
+}
+
+.active{
+    position: absolute;
+    background-color: red;
+    width: 90%;
+    height: 30px;
+
+}    
+   

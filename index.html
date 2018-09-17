@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>ćwiczenie z kursu - prosta gra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="game_box">
+
+        <div id="app_game">
+
+            <div class="elements_section1">
+                <div class="character element_you">TY
+                    <div class="passive you_power">
+                        <div class="active you_power" :style="{width: powerYou + '%'}"> {{ powerYou }} </div>
+                    </div>
+                </div>
+                <div class="character element_monster">POTWÓR
+                    <div class="passive monster_power">
+                        <div class="active monster_power" :style="{width: powerMonster + '%'}" > {{ powerMonster }} </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="run" v-if="!gameIsRunning">
+            <div class="elements_section2">
+                <button class="el element_start" @click="startGame">START</button>
+            </div>
+            </section>
+
+            <section class="run" v-else>
+            <div class="elements_section3">
+                <button class="el element_attack">ATAK</button>
+                <button class="el element_special_attack">SPECJALNY ATAK</button>
+                <button class="el element_heal">UZDRÓW</button>
+                <button class="el element_give_up">PODDAJ SIĘ!</button>
+            </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
