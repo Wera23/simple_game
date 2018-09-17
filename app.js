@@ -12,8 +12,8 @@ new Vue({
             this.powerMonster = 100;
         },
         attack: function(){
-            var max = 10;
-            var min = 3;
+            var max = 9;
+            var min = 2;
             var loss = Math.max(Math.floor(Math.random()* max) + 1, min)
             this.powerYou -= loss;
 
@@ -23,8 +23,8 @@ new Vue({
                 return;
             }
             
-            var max = 12;
-            var min = 5;
+            var max = 11;
+            var min = 4;
             var loss = Math.max(Math.floor(Math.random()* max) + 1, min)
             this.powerMonster -= loss;
 
