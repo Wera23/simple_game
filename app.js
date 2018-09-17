@@ -22,6 +22,13 @@ new Vue({
         },
         specialAttack: function () {
 
+            this.powerMonster -= this.calculateLoss(9, 19);
+            if (this.checkWin()) {
+                return;
+            }
+            this.powerYou -= this.calculateLoss(10, 20);//(min, max)
+            this.checkWin();
+
         },
         addLife: function () {
 
